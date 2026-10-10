@@ -5,40 +5,42 @@ import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
 
 export const metadata: Metadata = {
-  applicationName: "Eko Suryahadi Portfolio",
+  applicationName: "Eko Suryahadi Industrial Engineering Portfolio",
   title: {
-    default: "Eko Suryahadi | O&G and EPC Analytics Consultant",
+    default: "Eko Suryahadi | Industrial Data & AI Specialist · EPC Tech Lead",
     template: "%s | Eko Suryahadi"
   },
   description:
-    "Power BI, AI/ML, and data application consultant helping Oil & Gas and EPC teams improve production, project-control, and asset reliability decisions.",
+    "Engineering portfolio bridging heavy industry domain depth (Oil & Gas, EPC, HSE, Cost Control) with modern Big Data Lakehouse (DuckDB out-of-core), AI Agents, and full-stack production systems.",
   metadataBase: new URL("https://ekosuryahadi.com"),
   alternates: {
     canonical: "/"
   },
   keywords: [
-    "Oil and Gas analytics consultant",
-    "EPC project control analytics",
-    "Power BI consultant Indonesia",
-    "predictive maintenance analytics",
-    "project delay prediction"
+    "Industrial Data Engineering",
+    "DuckDB Lakehouse Architecture",
+    "EPC Project Scheduling",
+    "Kurvaup Gantt S-Curve Engine",
+    "Oil and Gas Safety Analytics",
+    "Earned Value Management SaaS",
+    "AI Autonomous Agents"
   ],
   authors: [{ name: "Eko Suryahadi", url: "https://ekosuryahadi.com" }],
   creator: "Eko Suryahadi",
   publisher: "Eko Suryahadi",
   openGraph: {
-    title: "Eko Suryahadi | O&G and EPC Analytics Consultant",
-    description: "Power BI, AI/ML, and data applications for operational and project-control decisions.",
+    title: "Eko Suryahadi | Industrial Data & AI Specialist · EPC Tech Lead",
+    description: "Production-grade out-of-core data engines, mathematical project scheduling, and AI agent engineering.",
     url: "https://ekosuryahadi.com",
     siteName: "Eko Suryahadi Portfolio",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Eko Suryahadi Portfolio" }]
+    images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Eko Suryahadi Industrial Portfolio" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eko Suryahadi | O&G and EPC Analytics Consultant",
-    description: "Power BI, AI/ML, and data applications for operational and project-control decisions.",
+    title: "Eko Suryahadi | Industrial Data & AI Specialist · EPC Tech Lead",
+    description: "Production-grade out-of-core data engines, mathematical project scheduling, and AI agent engineering.",
     images: ["/og.svg"]
   },
   icons: {
@@ -51,35 +53,27 @@ const personSchema = {
   "@type": "Person",
   name: "Eko Suryahadi",
   url: "https://ekosuryahadi.com",
-  image: "https://ekosuryahadi.com/profile.jpg",
   email: "e.suryahadi@gmail.com",
-  jobTitle: "Power BI, AI/ML, and Analytics Consultant",
+  jobTitle: "Industrial Data & AI Specialist / EPC Tech Lead",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Balikpapan",
     addressCountry: "ID"
   },
   sameAs: [
     "https://linkedin.com/in/ekosuryahadi",
-    "https://github.com/ekosuryahadi"
-  ],
-  knowsAbout: [
-    "Power BI",
-    "Oil and Gas Analytics",
-    "EPC Project Control",
-    "Machine Learning",
-    "Data Engineering",
-    "Predictive Maintenance"
+    "https://github.com/EkoSuryaHadi"
   ]
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen font-sans antialiased">
+    <html lang="en" className="dark scroll-smooth">
+      <head>
         <JsonLd data={personSchema} />
+      </head>
+      <body className="min-h-screen bg-[#08090A] text-zinc-100 antialiased selection:bg-white selection:text-black font-sans">
         <Header />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
